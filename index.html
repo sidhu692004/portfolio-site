@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sudhanshu Shekhar - Portfolio</title>
+
+    <meta name="description" content="Portfolio of Sudhanshu Shekhar, B.Tech/Computer Science and Engineering student at Amritsar Group of Colleges. Skilled in Android Development (Kotlin, Java, Firebase, SQLite) and Web Development (HTML, CSS, JavaScript). Creator of projects like Garbage Cleaner, Voice Assistant(OGI/JARVIS), Restaurant Management System, and MilkoSys. Passionate about AI, Machine Learning, Data Science.">
+
+    <meta name="keywords" content="Sudhanshu Shekhar, Portfolio, Android Developer, Java Developer, Kotlin, Java, Firebase, SQLite, HTML, CSS, JavaScript, Python, AI, Machine Learning, Data Science, Garbage Cleaner, Voice Assistant(OGI/JARVIS), Restaurant Management System, MilkoSys">
+
+    <meta name="author" content="Sudhanshu Shekhar">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading Portfolio...</div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </label>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Sudhanshu Shekhar</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#timeline" class="nav-link">Journey</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">Sudhanshu Shekhar</span></h1>
+                    <p class="hero-subtitle">B.Tech/Computer Science and Engineering</p>
+                    <p class="hero-description">
+                      Passionate about Android, Java Development & Python Development with hands-on experience in projects like Garbage Cleaner, Voice Assistant(OGI/JARVIS), 
+                      Restaurant Management System, and MilkoSys. Skilled in Kotlin, Java and Python.
+                      I create innovative, user-focused, and scalable solutions that solve real-world challenges.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:sudhanshushekhar692004@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/sidhu692004" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="tel:+918228958397" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="photo.jpg" alt="Sudhanshu Shekhar" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Get to know more about my background and journey</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Dedicated Computer Science and Engineering Student & Developer</h3>
+                <p>
+                    I'm a B.Tech/Computer Science and Engineering student at Amritsar Group of Colleges, 
+                    Amritsar, Punjab. My passion lies in Android, Java Development & Python Development, AI, and problem-solving 
+                    through clean and user-focused solutions.
+                </p>
+                <p>
+                    Skilled in Kotlin, Java, Python, Firebase and Android Development, I have developed 
+                    impactful projects like <strong>Garbage Cleaner</strong>, <strong>Voice Assistant(OGI/JARVIS)</strong>, 
+                    <strong>Restaurant Management System</strong>, and <strong>MilkoSys</strong>.  
+                    My journey is driven by curiosity, continuous learning, and real-world application of technology.
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>7.04</h4>
+                        <p>Current CGPA</p>
+                    </div>
+                    <div class="stat">
+                        <h4>5</h4>
+                        <p>Major Projects</p>
+                    </div>
+                    <div class="stat">
+                        <h4>4</h4>
+                        <p>Certifications & Achievements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-info">
+                <div class="info-card">
+                    <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+                    <div class="education-item">
+                        <h5>Bachelor of Technology - Computer Science and Engineering</h5>
+                        <p>Amritsar Group of Colleges, Amritsar, Punjab</p>
+                        <span>2022 - 2026 (Expected)</span>
+                    </div>
+                    <div class="education-item">
+                        <h5>Secondary School (12th Grade)</h5>
+                        <p>Lalit Narain Tirhut College, Muzaffarpur, Bihar</p>
+                        <span>2021 | 70.4%</span>
+                    </div>
+                    <div class="education-item">
+                        <h5>High School (10th Grade)</h5>
+                        <p>High School Chhajan Mohini, Muzaffarpur, Bihar</p>
+                        <span>2019 | 73.6%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Skills Section -->
+<section id="skills" class="skills">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Technologies and tools I work with</p>
+        </div>
+        <div class="skills-content-enhanced">
+
+            <!-- Programming Languages -->
+            <div class="skill-category-enhanced programming">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Programming Languages</h3>
+                        <p>Core programming skills and expertise</p>
+                    </div>
+                </div>
+                <div class="skill-items-grid">
+                    <div class="skill-card advanced">
+                        <div class="skill-icon java">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Java</h4>
+                            <div class="skill-level">Advanced</div>
+                            <div class="skill-progress-circle" data-progress="80">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#e67e22" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill-experience">2+ years</div>
+                    </div>
+
+                    <div class="skill-card intermediate">
+                        <div class="skill-icon kotlin">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Kotlin</h4>
+                            <div class="skill-level">Intermediate</div>
+                            <div class="skill-progress-circle" data-progress="70">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#8e44ad" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">70%</div>
+                            </div>
+                        </div>
+                        <div class="skill-experience">1+ years</div>
+                    </div>
+
+                    <div class="skill-card intermediate">
+                        <div class="skill-icon python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Python</h4>
+                            <div class="skill-level">Intermediate</div>
+                            <div class="skill-progress-circle" data-progress="75">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#3498db" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">75%</div>
+                            </div>
+                        </div>
+                        <div class="skill-experience">2+ years</div>
+                    </div>
+
+                    <div class="skill-card beginner">
+                        <div class="skill-icon c">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>C</h4>
+                            <div class="skill-level">Basic</div>
+                            <div class="skill-progress-circle" data-progress="60">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#2ecc71" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">60%</div>
+                            </div>
+                        </div>
+                        <div class="skill-experience">3+ year</div>
+                        
+                    </div>
+                    <div class="skill-card beginner">
+                        <div class="skill-icon c++">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>C++</h4>
+                            <div class="skill-level">Basic</div>
+                            <div class="skill-progress-circle" data-progress="65">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#2ecc71" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">65%</div>
+                            </div>
+                        </div>
+                        <div class="skill-experience">2+ year</div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="skill-category-enhanced web">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Web Development</h3>
+                        <p>Frontend and backend technologies</p>
+                    </div>
+                </div>
+                <div class="skill-items-grid">
+                    <div class="skill-card intermediate">
+                        <div class="skill-icon html">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>HTML5</h4>
+                            <div class="skill-level">Intermediate</div>
+                            <div class="skill-progress-circle" data-progress="75">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#e34c26" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">75%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card intermediate">
+                        <div class="skill-icon css">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>CSS3</h4>
+                            <div class="skill-level">Intermediate</div>
+                            <div class="skill-progress-circle" data-progress="65">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#2965f1" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">65%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card intermediate">
+                        <div class="skill-icon js">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>JavaScript</h4>
+                            <div class="skill-level">Intermediate</div>
+                            <div class="skill-progress-circle" data-progress="70">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#f7df1e" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">70%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Android Development -->
+            <div class="skill-category-enhanced android">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Android Development</h3>
+                        <p>Mobile app development technologies</p>
+                    </div>
+                </div>
+                <div class="skill-items-grid">
+                    <div class="skill-card intermediate">
+                        <div class="skill-icon studio">
+                            <i class="fas fa-mobile"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Android Studio</h4>
+                            <div class="skill-level">Intermediate</div>
+                            <div class="skill-progress-circle" data-progress="82">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#4caf50" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">82%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card intermediate">
+                        <div class="skill-icon firebase">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Firebase</h4>
+                            <div class="skill-level">Intermediate</div>
+                            <div class="skill-progress-circle" data-progress="80">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#ffa000" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">80%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card beginner">
+                        <div class="skill-icon mysql">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>SQLite</h4>
+                            <div class="skill-level">Basic</div>
+                            <div class="skill-progress-circle" data-progress="70">
+                                <svg class="progress-ring" width="60" height="60">
+                                    <circle class="progress-ring__circle" stroke="#00758f" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                </svg>
+                                <div class="progress-text">70%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-category-enhanced tools">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="category-info">
+                        <h3>Tools & Platforms</h3>
+                        <p>Version control, IDEs, and collaboration tools</p>
+                    </div>
+                </div>
+                <div class="skill-items-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon git">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>Git & GitHub</h4>
+                            <div class="skill-level">Proficient</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon vscode">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="skill-info">
+                            <h4>VS Code</h4>
+                            <div class="skill-level">Proficient</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Section -->
+<section id="timeline" class="timeline">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">My Journey</h2>
+            <p class="section-subtitle">Academic achievements, milestones, and certifications</p>
+        </div>
+        <div class="timeline-container">
+
+            <!-- B.Tech -->
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - 2026 (Expected)</div>
+                    <h3>Bachelor of Technology</h3>
+                    <h4>Computer Science and Engineering</h4>
+                    <p>Amritsar Group of Colleges, Amritsar, Punjab</p>
+                    <div class="timeline-badge">Current CGPA: 7.04</div>
+                </div>
+            </div>
+
+            <!-- 12th -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2021</div>
+                    <h3>Senior Secondary (12th Grade)</h3>
+                    <h4>Lalit Narain College</h4>
+                    <p>Muzaffarpur, Bihar</p>
+                    <div class="timeline-badge">70.4%</div>
+                </div>
+            </div>
+
+            <!-- 10th -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2019</div>
+                    <h3>Secondary School (10th Grade)</h3>
+                    <h4>High School Chhajan Mohini</h4>
+                    <p>Muzaffarpur, Bihar</p>
+                    <div class="timeline-badge">73.6%</div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2025</div>
+                    <h3>Android Development with Kotlin</h3>
+                    <h4>Udemy - 2025</h4>
+                </div>
+            </div>
+
+            <!-- 2nd certificate -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2024</div>
+                    <h3>Java Full Stack Development (Beginner to Advanced)</h3>
+                    <h4>Udemy - 2024</h4>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2025</div>
+                    <h3>100 Days Badge</h3>
+                    <h4>Leetcode -2025</h4>
+                    <p>Achieved the 100 Days of Code challenge on Leetcode.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="800">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2025</div>
+                    <h3>DCC March 2025 and DCC April 2025</h3>
+                    <h4>Leetcode -2025</h4>
+                    <p>Achieved the DCC March 2025 and DCC April 2025 challenges on Leetcode.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some of my major projects and practical work</p>
+        </div>
+        
+        <!-- Project Filters -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ml">AI / ML</button>
+            <button class="filter-btn" data-filter="web">C++</button>
+            <button class="filter-btn" data-filter="java">Android App (Java)</button>
+            <button class="filter-btn" data-filter="kotlin">Android App (Kotlin)</button>
+        </div>
+        
+        <div class="projects-grid">
+
+            <!-- Kachra Seth -->
+            <div class="project-card" data-category="java">
+                <div class="project-image">
+                    <img src="garbage.png" alt="Garbage Cleaner App" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://github.com/sidhu692004/Garbage-Cleaner" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">Featured</div>
+                </div>
+                <div class="project-content">
+                    <h3>Garbage Cleaner – Household Scrap Management App</h3>
+                    <p>Doorstep household scrap collection service. Supports recycling, upcycling, and sustainable waste management.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-date">2024 - Completed</div>
+                        <div class="project-status">Startup Project</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Assistant -->
+            <div class="project-card" data-category="ml">
+                <div class="project-image">
+                    <img src="ogi.png" alt="Voice Assistant(OGI/JARVIS)" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://github.com/sidhu692004/OGI" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">AI Powered</div>
+                </div>
+                <div class="project-content">
+                    <h3>Voice Assistant(OGI/JARVIS)</h3>
+                    <p>Developed a cross-platform voice assistant using Python and Java (Jython), featuring API integration, speech recognition, web scraping, and real-time stock and knowledge modules with a Tkinter-based interface. The application intelligently switches to Java-based offline games when internet connectivity is unavailable, and leverages Python functionalities for advanced assistant features in online mode, similar to JARVIS.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python & Java(Jython)</span>
+                        <span class="tech-tag">Speech Recognition</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-date">2023</div>
+                        <div class="project-status">Completed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Management System -->
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="restaurant.png" alt="Restaurant Management System" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://github.com/sidhu692004/Restaurant-Management" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">C++</div>
+                </div>
+                <div class="project-content">
+                    <h3>Restaurant Management System</h3>
+                    <p>Responsive restaurant system with C++ without any interface.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-date">2023</div>
+                        <div class="project-status">Completed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MilkoSys -->
+            <div class="project-card" data-category="kotlin">
+                <div class="project-image">
+                    <img src="milkosys.png" alt="MilkoSys" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://github.com/sidhu692004/MilkoSys-Dairy" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">MilkoSys App</div>
+                </div>
+                <div class="project-content">
+                    <h3>MilkoSys</h3>
+                    <p>Android app for dairy farm management, including features for milk collection, inventory management, and sales tracking.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Android</span>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-date">2025</div>
+                        <div class="project-status">Completed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coin Keeper -->
+            <div class="project-card" data-category="kotlin">
+                <div class="project-image">
+                    <img src="coin_keeper.png" alt="Coin Keeper" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="https://github.com/sidhu692004/Coin-Keeper" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-badge">Coin Keeper App</div>
+                </div>
+                <div class="project-content">
+                    <h3>Coin Keeper</h3>
+                    <p>Android app for monthly expense management and equal divide cost with roommate or friends (Kotlin).</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Android(Kotlin)</span>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-date">2025</div>
+                        <div class="project-status">Completed</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+   <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">What People Say</h2>
+            <p class="section-subtitle">Feedback from peers, mentors, and collaborators</p>
+        </div>
+        <div class="testimonials-grid">
+
+            <!-- Professor Feedback -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"Sudhanshu consistently demonstrates strong problem-solving skills and technical knowledge in Computer Science and Engineering and software development. His projects like Garbage Cleaner, OGI, and MilkoSys show real-world impact and innovation."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>Professor of Computer Science and Engineering</h4>
+                        <span>Amritsar Group of Colleges, Amritsar</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Teammate Feedback -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"Working with Sudhanshu on the MilkoSys startup was inspiring. His leadership, Android development expertise, and ability to integrate Firebase made the project a huge success."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>Sonu Kumar</h4>
+                        <span>Co-Founder, Garbage Cleaner</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mentor / Guide Feedback -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"Sudhanshu's dedication to continuous learning in AI, Machine Learning, and Data Science, combined with his systematic approach to software development, makes him a valuable professional in the making."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h4>Technical Mentor</h4>
+                        <span>Industry Professional</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss opportunities and collaborations</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:sudhanshushekhar692004@gmail.com">sudhanshushekhar692004@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+918228958397">+91 8228958397</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/sidhu692004" target="_blank">github.com/sidhu692004</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Amritsar, Punjab, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sudhanshu Shekhar</h3>
+                    <p>B.Tech/Computer Science and Engineering Student</p>
+                    <div class="footer-social">
+                        <a href="mailto:sudhanshushekhar692004@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/sidhu692004" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="tel:+918228958397" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Interests</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>AI & Machine Learning</li>
+                            <li>App Development</li>
+                            <li>Entrepreneurship</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sudhanshu Shekhar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

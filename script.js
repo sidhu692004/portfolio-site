@@ -630,7 +630,7 @@ function enhancedTypingEffect() {
     const texts = [
         "Hi, I'm Sudhanshu Shekhar",
         "Founder of Garbage Cleaner and MilkoSys",
-        "App & AI Developer",
+        "App, Java & AI Developer",
         "Tech Innovator"
     ];
     let textIndex = 0;

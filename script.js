@@ -128,23 +128,17 @@ navLinks.forEach(link => {
     });
 });
 
-// Navbar background change on scroll
+// Navbar scroll behavior
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const lightBg = isDark ? 'rgba(26, 26, 26, 0.98)' : 'rgba(255, 255, 255, 0.98)';
-    const lightBgDefault = isDark ? 'rgba(26, 26, 26, 0.95)' : 'rgba(255, 255, 255, 0.95)';
-    const shadowColor = isDark ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0.15)';
-    const shadowColorDefault = isDark ? 'rgba(0, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0.1)';
-    
     if (window.scrollY > 50) {
-        navbar.style.background = lightBg;
-        navbar.style.backdropFilter = 'blur(20px)';
-        navbar.style.boxShadow = `0 2px 30px ${shadowColor}`;
+        navbar.style.padding = '0.5rem 0';
+        navbar.style.background = 'rgba(var(--navbar-bg), 0.8)';
+        navbar.style.boxShadow = 'var(--shadow-lg)';
     } else {
-        navbar.style.background = lightBgDefault;
-        navbar.style.backdropFilter = 'blur(10px)';
-        navbar.style.boxShadow = `0 2px 20px ${shadowColorDefault}`;
+        navbar.style.padding = '0';
+        navbar.style.background = 'rgba(var(--navbar-bg), 0.7)';
+        navbar.style.boxShadow = 'none';
     }
 });
 
@@ -182,15 +176,19 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-up');
+            entry.target.classList.add('reveal');
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe sections and cards
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.skill-category, .project-card, .about-text, .info-card, .contact-item, .certification-item');
-    animatedElements.forEach(el => observer.observe(el));
+    const revealElements = document.querySelectorAll('section, .skill-category-enhanced, .project-card, .testimonial-card');
+    revealElements.forEach(el => {
+        el.classList.add('reveal-hidden');
+        observer.observe(el);
+    });
 });
 
 // Typing effect for hero title

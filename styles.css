@@ -1168,6 +1168,18 @@ section {
     }
 }
 
+.skill-icon.flutter i {
+    color: #02569B;
+}
+
+.skill-icon.dart i {
+    color: #0175C2;
+}
+
+.skill-icon.supabase i {
+    color: #3ECF8E;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

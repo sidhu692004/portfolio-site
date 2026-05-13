@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
 function initializeTheme() {
     const savedTheme = localStorage.getItem('theme');
     const themeToggle = document.getElementById('checkbox');
-    
+
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
         if (themeToggle) themeToggle.checked = savedTheme === 'dark';
@@ -45,7 +45,7 @@ if (themeToggle) {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
         }
-        
+
         // Update navbar immediately after theme change
         setTimeout(() => {
             const scrollEvent = new Event('scroll');
@@ -87,7 +87,7 @@ window.addEventListener('scroll', toggleBackToTop);
 
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
+
     // Animate hamburger bars
     const bars = navToggle.querySelectorAll('.bar');
     bars[0].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(-5px, 6px)' : 'none';
@@ -99,7 +99,7 @@ navToggle.addEventListener('click', () => {
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        
+
         // Reset hamburger bars
         const bars = navToggle.querySelectorAll('.bar');
         bars[0].style.transform = 'none';
@@ -114,12 +114,12 @@ navLinks.forEach(link => {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
+
         if (targetSection) {
             const headerOffset = 70;
             const elementPosition = targetSection.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
+
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
@@ -148,12 +148,12 @@ const navLinksArray = Array.from(navLinks);
 
 function updateActiveNavLink() {
     const scrollPosition = window.scrollY + 100;
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
-        
+
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             navLinksArray.forEach(link => {
                 link.classList.remove('active');
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
-    
+
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -220,23 +220,23 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(contactForm);
         const name = formData.get('name');
         const email = formData.get('email');
         const subject = formData.get('subject');
         const message = formData.get('message');
-        
+
         // Create mailto link
         const mailtoLink = `mailto:sudhanshushekhar692004@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-        
+
         // Open default email client
         window.location.href = mailtoLink;
-        
+
         // Show success message
         showNotification('Thank you! Your default email client will open with the message.', 'success');
-        
+
         // Reset form
         contactForm.reset();
     });
@@ -247,7 +247,7 @@ function showNotification(message, type = 'info') {
     // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
     existingNotifications.forEach(notification => notification.remove());
-    
+
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
@@ -257,7 +257,7 @@ function showNotification(message, type = 'info') {
             <button class="notification-close">&times;</button>
         </div>
     `;
-    
+
     // Add styles
     notification.style.cssText = `
         position: fixed;
@@ -274,15 +274,15 @@ function showNotification(message, type = 'info') {
         max-width: 400px;
         font-family: 'Poppins', sans-serif;
     `;
-    
+
     // Add to page
     document.body.appendChild(notification);
-    
+
     // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Close button functionality
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.style.cssText = `
@@ -295,12 +295,12 @@ function showNotification(message, type = 'info') {
         padding: 0;
         line-height: 1;
     `;
-    
+
     closeBtn.addEventListener('click', () => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => notification.remove(), 300);
     });
-    
+
     // Auto remove after 5 seconds
     setTimeout(() => {
         if (document.body.contains(notification)) {
@@ -315,7 +315,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
-    
+
     if (hero && heroContent) {
         const rate = scrolled * -0.5;
         heroContent.style.transform = `translateY(${rate}px)`;
@@ -325,13 +325,13 @@ window.addEventListener('scroll', () => {
 // Project card hover effects
 document.addEventListener('DOMContentLoaded', () => {
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-15px) rotateY(5deg)';
             card.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.2)';
         });
-        
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0) rotateY(0)';
             card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Skills animation on scroll
 function animateSkills() {
     const skillItems = document.querySelectorAll('.skill-item');
-    
+
     skillItems.forEach((item, index) => {
         setTimeout(() => {
             item.style.transform = 'translateY(0)';
@@ -354,12 +354,12 @@ function animateSkills() {
 // Statistics counter animation
 function animateCounters() {
     const stats = document.querySelectorAll('.stat h4');
-    
+
     stats.forEach(stat => {
         const target = parseInt(stat.textContent);
         const increment = target / 50;
         let current = 0;
-        
+
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
@@ -399,11 +399,11 @@ if (skillsSection) skillsObserver.observe(skillsSection);
 // Form validation
 function validateForm(formData) {
     const errors = [];
-    
+
     if (!formData.get('name').trim()) {
         errors.push('Name is required');
     }
-    
+
     const email = formData.get('email').trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email) {
@@ -411,15 +411,15 @@ function validateForm(formData) {
     } else if (!emailRegex.test(email)) {
         errors.push('Please enter a valid email address');
     }
-    
+
     if (!formData.get('subject').trim()) {
         errors.push('Subject is required');
     }
-    
+
     if (!formData.get('message').trim()) {
         errors.push('Message is required');
     }
-    
+
     return errors;
 }
 
@@ -427,20 +427,20 @@ function validateForm(formData) {
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const formData = new FormData(contactForm);
         const errors = validateForm(formData);
-        
+
         if (errors.length > 0) {
             showNotification(errors.join('. '), 'error');
             return;
         }
-        
+
         const name = formData.get('name');
         const email = formData.get('email');
         const subject = formData.get('subject');
         const message = formData.get('message');
-        
+
         // Create mailto link with better formatting
         const mailtoLink = `mailto:sudhanshushekhar692004@gmail.com?subject=${encodeURIComponent(`Portfolio Contact: ${subject}`)}&body=${encodeURIComponent(`
 Hello Sudhanshu,
@@ -457,22 +457,22 @@ ${message}
 Best regards,
 ${name}
         `)}`;
-        
+
         // Open default email client
         window.location.href = mailtoLink;
-        
+
         // Show success message
         showNotification('Thank you for your message! Your email client will open shortly.', 'success');
-        
+
         // Reset form with animation
         contactForm.reset();
-        
+
         // Add send animation to button
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sent!';
         submitBtn.style.background = '#27ae60';
-        
+
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.style.background = '';
@@ -483,14 +483,14 @@ ${name}
 // Add loading states to buttons
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.btn');
-    
+
     buttons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             // Skip for external links and form submissions
             if (this.href && !this.href.startsWith('#') && !this.href.startsWith('mailto:') && !this.href.startsWith('tel:')) {
                 const originalText = this.textContent;
                 this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-                
+
                 setTimeout(() => {
                     this.textContent = originalText;
                 }, 1000);
@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroContent.classList.add('fade-in-up');
         }
     }, 500);
-    
+
     // Stagger animation for skill items
     const skillItems = document.querySelectorAll('.skill-item');
     skillItems.forEach((item, index) => {
@@ -522,19 +522,19 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeProjectFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
             button.classList.add('active');
-            
+
             const filterValue = button.getAttribute('data-filter');
-            
+
             projectCards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
-                
+
                 if (filterValue === 'all' || cardCategory.includes(filterValue)) {
                     card.style.display = 'block';
                     card.classList.add('show');
@@ -552,7 +552,7 @@ function initializeProjectFilters() {
 // Enhanced Skill Progress Animation
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
-    
+
     skillBars.forEach(bar => {
         const targetWidth = bar.getAttribute('data-width');
         setTimeout(() => {
@@ -564,15 +564,15 @@ function animateSkillBars() {
 // Circular Progress Animation
 function animateCircularProgress() {
     const progressCircles = document.querySelectorAll('.skill-progress-circle');
-    
+
     progressCircles.forEach(circle => {
         const progressValue = parseInt(circle.getAttribute('data-progress'));
         const progressBar = circle.querySelector('.progress-ring__circle');
         const circumference = 2 * Math.PI * 26; // radius = 26
-        
+
         progressBar.style.strokeDasharray = circumference;
         progressBar.style.strokeDashoffset = circumference;
-        
+
         // Animate the progress
         setTimeout(() => {
             const offset = circumference - (progressValue / 100) * circumference;
@@ -587,12 +587,12 @@ const enhancedObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             // Add fade-in animation
             entry.target.classList.add('fade-in-up');
-            
+
             // Trigger skill bar animations when skills section is visible
             if (entry.target.classList.contains('skills')) {
                 animateSkillBars();
             }
-            
+
             // Trigger counter animations when about section is visible
             if (entry.target.classList.contains('about-stats')) {
                 animateCounters();
@@ -608,16 +608,16 @@ const enhancedObserver = new IntersectionObserver((entries) => {
 function initializeTestimonialCarousel() {
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     let currentIndex = 0;
-    
+
     function rotateTestimonials() {
         testimonialCards.forEach((card, index) => {
             card.style.opacity = index === currentIndex ? '1' : '0.7';
             card.style.transform = index === currentIndex ? 'scale(1.02)' : 'scale(1)';
         });
-        
+
         currentIndex = (currentIndex + 1) % testimonialCards.length;
     }
-    
+
     // Start rotation every 4 seconds
     setInterval(rotateTestimonials, 4000);
 }
@@ -627,17 +627,17 @@ function enhancedTypingEffect() {
     const heroTitle = document.querySelector('.hero-title');
     const texts = [
         "Hi, I'm Sudhanshu Shekhar",
-        "Founder of Garbage Cleaner and MilkoSys",
-        "App, Java & AI Developer",
+        "Founder of India Starter",
+        "App, Flutter & Kotlin & Java & AI Developer",
         "Tech Innovator"
     ];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    
+
     function typeText() {
         const currentText = texts[textIndex];
-        
+
         if (isDeleting) {
             heroTitle.innerHTML = currentText.substring(0, charIndex - 1);
             charIndex--;
@@ -645,9 +645,9 @@ function enhancedTypingEffect() {
             heroTitle.innerHTML = currentText.substring(0, charIndex + 1);
             charIndex++;
         }
-        
+
         let typeSpeed = isDeleting ? 100 : 150;
-        
+
         if (!isDeleting && charIndex === currentText.length) {
             typeSpeed = 2000; // Pause at end
             isDeleting = true;
@@ -656,10 +656,10 @@ function enhancedTypingEffect() {
             textIndex = (textIndex + 1) % texts.length;
             typeSpeed = 500; // Pause before next text
         }
-        
+
         setTimeout(typeText, typeSpeed);
     }
-    
+
     // Start typing effect after loading screen
     setTimeout(typeText, 2000);
 }
@@ -679,7 +679,7 @@ function createParticles() {
         pointer-events: none;
         z-index: 1;
     `;
-    
+
     for (let i = 0; i < 50; i++) {
         const particle = document.createElement('div');
         particle.style.cssText = `
@@ -694,9 +694,9 @@ function createParticles() {
         `;
         particlesContainer.appendChild(particle);
     }
-    
+
     hero.appendChild(particlesContainer);
-    
+
     // Add CSS animation for particles
     const style = document.createElement('style');
     style.textContent = `
@@ -712,19 +712,19 @@ function createParticles() {
 function enhanceContactForm() {
     const form = document.getElementById('contactForm');
     const inputs = form.querySelectorAll('input, textarea');
-    
+
     inputs.forEach(input => {
         // Add floating labels effect
         input.addEventListener('focus', () => {
             input.parentElement.classList.add('focused');
         });
-        
+
         input.addEventListener('blur', () => {
             if (!input.value) {
                 input.parentElement.classList.remove('focused');
             }
         });
-        
+
         // Real-time validation
         input.addEventListener('input', () => {
             if (input.checkValidity()) {
@@ -744,22 +744,22 @@ document.addEventListener('DOMContentLoaded', () => {
     enhancedTypingEffect();
     createParticles();
     enhanceContactForm();
-    
+
     // Initialize enhanced skills features
     initializeEnhancedSkills();
-    
+
     // Observe sections for animations
     const sectionsToObserve = document.querySelectorAll('section, .skill-category, .project-card, .testimonial-card, .timeline-item, .skill-category-enhanced');
     sectionsToObserve.forEach(section => {
         enhancedObserver.observe(section);
     });
-    
+
     // Add stagger animation for project cards
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.2}s`;
     });
-    
+
     // Add hover sound effects (optional)
     const interactiveElements = document.querySelectorAll('.btn, .project-card, .skill-item');
     interactiveElements.forEach(element => {
@@ -767,12 +767,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add subtle scale effect
             element.style.transform = 'scale(1.02)';
         });
-        
+
         element.addEventListener('mouseleave', () => {
             element.style.transform = 'scale(1)';
         });
     });
-    
+
     // Performance optimization: Lazy load images
     const images = document.querySelectorAll('img');
     const imageObserver = new IntersectionObserver((entries) => {
@@ -785,7 +785,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 });
 
@@ -795,7 +795,7 @@ function initializeSkillSearch() {
     const filterButtons = document.querySelectorAll('.skill-filter-btn');
     const skillCards = document.querySelectorAll('.skill-card');
     const skillCategories = document.querySelectorAll('.skill-category-enhanced');
-    
+
     // Search functionality
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -803,7 +803,7 @@ function initializeSkillSearch() {
             filterSkills(searchTerm, getActiveFilter());
         });
     }
-    
+
     // Filter buttons functionality
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -811,27 +811,27 @@ function initializeSkillSearch() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
             button.classList.add('active');
-            
+
             const filterLevel = button.getAttribute('data-level');
             const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
             filterSkills(searchTerm, filterLevel);
         });
     });
-    
+
     function getActiveFilter() {
         const activeButton = document.querySelector('.skill-filter-btn.active');
         return activeButton ? activeButton.getAttribute('data-level') : 'all';
     }
-    
+
     function filterSkills(searchTerm, filterLevel) {
         skillCards.forEach(card => {
             const skillName = card.querySelector('h4').textContent.toLowerCase();
-            const skillLevel = card.classList.contains('advanced') ? 'advanced' : 
-                              card.classList.contains('intermediate') ? 'intermediate' : 'beginner';
-            
+            const skillLevel = card.classList.contains('advanced') ? 'advanced' :
+                card.classList.contains('intermediate') ? 'intermediate' : 'beginner';
+
             const matchesSearch = searchTerm === '' || skillName.includes(searchTerm);
             const matchesFilter = filterLevel === 'all' || skillLevel === filterLevel;
-            
+
             if (matchesSearch && matchesFilter) {
                 card.classList.remove('filtered-out');
                 card.classList.add('filtered-in');
@@ -842,7 +842,7 @@ function initializeSkillSearch() {
                 card.style.display = 'none';
             }
         });
-        
+
         // Hide/show categories if all skills in category are filtered out
         skillCategories.forEach(category => {
             const visibleCards = category.querySelectorAll('.skill-card:not(.filtered-out)');
@@ -859,51 +859,51 @@ function initializeSkillSearch() {
 function createSkillChart() {
     const canvas = document.getElementById('skillChart');
     if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    
-    // Custom skill data for Sudhanshu Shekhar
-const skills = [
-    { name: 'Python', level: 95, color: '#3776ab' },
-    { name: 'Java', level: 85, color: '#f89820' },
-    { name: 'Machine Learning', level: 90, color: '#e74c3c' },
-    { name: 'C', level: 80, color: '#f7931a' },
-    { name: 'App Development', level: 88, color: '#6c5ce7' },
-    { name: 'AI & NLP', level: 87, color: '#fd79a8' }
-];
 
-    
+    const ctx = canvas.getContext('2d');
+
+    // Custom skill data for Sudhanshu Shekhar
+    const skills = [
+        { name: 'Python', level: 95, color: '#3776ab' },
+        { name: 'Java', level: 85, color: '#f89820' },
+        { name: 'Machine Learning', level: 90, color: '#e74c3c' },
+        { name: 'C', level: 80, color: '#f7931a' },
+        { name: 'App Development', level: 88, color: '#6c5ce7' },
+        { name: 'AI & NLP', level: 87, color: '#fd79a8' }
+    ];
+
+
     // Set canvas size
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    
+
     const barWidth = (canvas.width - 100) / skills.length;
     const maxBarHeight = canvas.height - 100;
-    
+
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     // Draw bars
     skills.forEach((skill, index) => {
         const barHeight = (skill.level / 100) * maxBarHeight;
         const x = 50 + index * barWidth;
         const y = canvas.height - 50 - barHeight;
-        
+
         // Create gradient
         const gradient = ctx.createLinearGradient(0, y, 0, y + barHeight);
         gradient.addColorStop(0, skill.color);
         gradient.addColorStop(1, skill.color + '80');
-        
+
         // Draw bar
         ctx.fillStyle = gradient;
         ctx.fillRect(x, y, barWidth - 10, barHeight);
-        
+
         // Draw skill name
         ctx.fillStyle = '#666';
         ctx.font = '12px Poppins';
         ctx.textAlign = 'center';
         ctx.fillText(skill.name, x + (barWidth - 10) / 2, canvas.height - 30);
-        
+
         // Draw percentage
         ctx.fillStyle = '#333';
         ctx.font = 'bold 14px Poppins';
@@ -915,7 +915,7 @@ const skills = [
 function animateSkillChart() {
     const chartSection = document.querySelector('.skill-comparison-section');
     if (!chartSection) return;
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -926,21 +926,21 @@ function animateSkillChart() {
             }
         });
     }, { threshold: 0.3 });
-    
+
     observer.observe(chartSection);
 }
 
 // Enhanced Skill Progress Animation with Stagger Effect
 function enhancedSkillAnimation() {
     const skillCategories = document.querySelectorAll('.skill-category-enhanced');
-    
+
     skillCategories.forEach((category, categoryIndex) => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const skillCards = entry.target.querySelectorAll('.skill-card');
                     const progressCircles = entry.target.querySelectorAll('.skill-progress-circle');
-                    
+
                     // Animate skill cards
                     skillCards.forEach((card, index) => {
                         setTimeout(() => {
@@ -948,17 +948,17 @@ function enhancedSkillAnimation() {
                             card.style.transform = 'translateY(0)';
                         }, index * 150);
                     });
-                    
+
                     // Animate progress circles
                     setTimeout(() => {
                         animateCircularProgress();
                     }, skillCards.length * 150);
-                    
+
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.2 });
-        
+
         observer.observe(category);
     });
 }
@@ -966,37 +966,37 @@ function enhancedSkillAnimation() {
 // Skill Card Hover Effects with Sound Indication
 function enhanceSkillCardInteraction() {
     const skillCards = document.querySelectorAll('.skill-card');
-    
+
     skillCards.forEach(card => {
         // Enhanced hover effect
         card.addEventListener('mouseenter', () => {
             card.style.transform = 'translateY(-10px) scale(1.02)';
             card.style.zIndex = '10';
-            
+
             // Add glow effect to progress circle
             const progressCircle = card.querySelector('.progress-ring__circle');
             if (progressCircle) {
                 progressCircle.style.filter = 'drop-shadow(0 0 8px currentColor)';
             }
         });
-        
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0) scale(1)';
             card.style.zIndex = '1';
-            
+
             const progressCircle = card.querySelector('.progress-ring__circle');
             if (progressCircle) {
                 progressCircle.style.filter = 'none';
             }
         });
-        
+
         // Click to show more info (tooltip)
         card.addEventListener('click', () => {
             const skillName = card.querySelector('h4').textContent;
             const skillLevel = card.querySelector('.skill-level').textContent;
             const skillExperience = card.querySelector('.skill-experience').textContent;
             const skillPercentage = card.querySelector('.progress-text').textContent;
-            
+
             showSkillTooltip(skillName, skillLevel, skillExperience, skillPercentage, card);
         });
     });
@@ -1007,7 +1007,7 @@ function showSkillTooltip(name, level, experience, percentage, element) {
     // Remove existing tooltips
     const existingTooltips = document.querySelectorAll('.skill-tooltip');
     existingTooltips.forEach(tooltip => tooltip.remove());
-    
+
     const tooltip = document.createElement('div');
     tooltip.className = 'skill-tooltip';
     tooltip.innerHTML = `
@@ -1023,7 +1023,7 @@ function showSkillTooltip(name, level, experience, percentage, element) {
             </div>
         </div>
     `;
-    
+
     // Style the tooltip
     tooltip.style.cssText = `
         position: fixed;
@@ -1037,20 +1037,20 @@ function showSkillTooltip(name, level, experience, percentage, element) {
         max-width: 300px;
         font-family: 'Poppins', sans-serif;
     `;
-    
+
     // Position tooltip
     const rect = element.getBoundingClientRect();
     tooltip.style.top = (rect.top - 10) + 'px';
     tooltip.style.left = (rect.right + 10) + 'px';
-    
+
     // Add to page
     document.body.appendChild(tooltip);
-    
+
     // Close button functionality
     tooltip.querySelector('.tooltip-close').addEventListener('click', () => {
         tooltip.remove();
     });
-    
+
     // Auto-close after 5 seconds
     setTimeout(() => {
         if (document.body.contains(tooltip)) {
@@ -1075,7 +1075,7 @@ function initializeEnhancedSkills() {
     animateSkillChart();
     enhancedSkillAnimation();
     enhanceSkillCardInteraction();
-    
+
     // Set initial styles for skill cards
     const skillCards = document.querySelectorAll('.skill-card');
     skillCards.forEach(card => {

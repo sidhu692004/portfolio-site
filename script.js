@@ -21,37 +21,9 @@ window.addEventListener('load', () => {
 
 // Dark Mode Toggle
 function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const themeToggle = document.getElementById('checkbox');
-
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        if (themeToggle) themeToggle.checked = savedTheme === 'dark';
-    } else {
-        // Default to light mode
-        document.documentElement.setAttribute('data-theme', 'light');
-        if (themeToggle) themeToggle.checked = false;
-        localStorage.setItem('theme', 'light');
-    }
-}
-
-// Theme toggle event listener
-if (themeToggle) {
-    themeToggle.addEventListener('change', () => {
-        if (themeToggle.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }
-
-        // Update navbar immediately after theme change
-        setTimeout(() => {
-            const scrollEvent = new Event('scroll');
-            window.dispatchEvent(scrollEvent);
-        }, 50);
-    });
+    // Site is dark mode only
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
 }
 
 // Initialize theme on page load
@@ -625,10 +597,10 @@ function initializeTestimonialCarousel() {
 // Enhanced Typing Effect with Multiple Texts
 function enhancedTypingEffect() {
     const heroTitle = document.querySelector('.hero-title');
-    const texts = [
+const texts = [
         "Hi, I'm Sudhanshu Shekhar",
-        "Founder of India Starter",
-        "App, Flutter & Kotlin & Java & AI Developer",
+        "Mobile App Developer (Flutter) @ CodeSoar Technologies",
+        "Flutter & Dart Developer | AI Enthusiast",
         "Tech Innovator"
     ];
     let textIndex = 0;
@@ -708,6 +680,70 @@ function createParticles() {
     document.head.appendChild(style);
 }
 
+// Floating Tech Icon Background Effect (Space-like)
+function createTechBackground() {
+const icons = [
+        'fab fa-android', 'fab fa-apple', 'fab fa-google-play', 'fab fa-app-store',
+        'fab fa-android', 'fab fa-apple', 'fab fa-chrome', 'fab fa-firefox',
+        'fab fa-java', 'fab fa-python', 'fab fa-js-square', 'fab fa-html5',
+        'fab fa-css3-alt', 'fab fa-react', 'fab fa-node-js', 'fab fa-npm',
+        'fab fa-github', 'fab fa-docker', 'fab fa-aws', 'fab fa-google',
+        'fas fa-database', 'fas fa-code', 'fas fa-brain', 'fas fa-robot',
+        'fas fa-cloud', 'fas fa-microchip', 'fas fa-cogs',
+        'fas fa-mobile-alt', 'fas fa-mobile-screen-button',
+        'fas fa-tablet-alt', 'fas fa-tablet', 'fas fa-tablet-screen-button',
+        'fas fa-server', 'fas fa-laptop-code', 'fas fa-terminal', 'fas fa-bolt',
+        'fas fa-shield-alt', 'fas fa-rocket', 'fas fa-satellite', 'fas fa-globe'
+    ];
+    const positions = ['4%', '12%', '20%', '28%', '36%', '44%', '52%', '60%', '68%', '76%', '84%', '92%'];
+
+    for (let i = 0; i < 32; i++) {
+        const icon = document.createElement('i');
+        icon.className = `tech-bg-icon ${icons[i % icons.length]}`;
+        icon.style.left = positions[i % positions.length];
+        icon.style.top = `${(i * 7) % 100}%`;
+        icon.style.fontSize = `${1.5 + (i % 4) * 0.6}rem`;
+        icon.style.animationDelay = `${i * 0.8}s`;
+        icon.style.animationDuration = `${12 + (i % 5) * 4}s`;
+        icon.style.opacity = `${0.08 + (i % 4) * 0.05}`;
+        document.body.appendChild(icon);
+    }
+}
+
+// Space Starfield Background (twinkling stars)
+function createStarfield() {
+    const starCount = 120;
+    const container = document.createElement('div');
+    container.className = 'starfield';
+    container.style.cssText = `
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        overflow: hidden;
+    `;
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'space-star';
+        star.style.cssText = `
+            position: absolute;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            width: ${Math.random() * 3 + 1}px;
+            height: ${Math.random() * 3 + 1}px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle ${Math.random() * 4 + 2}s ease-in-out infinite;
+            animation-delay: ${Math.random() * 5}s;
+            opacity: ${Math.random() * 0.7 + 0.2};
+        `;
+        container.appendChild(star);
+    }
+
+    document.body.appendChild(container);
+}
+
 // Enhanced Form Handling with Better UX
 function enhanceContactForm() {
     const form = document.getElementById('contactForm');
@@ -738,11 +774,13 @@ function enhanceContactForm() {
 
 // Initialize all enhanced features
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all new features
-    initializeProjectFilters();
+// Initialize all new features
+initializeProjectFilters();
     initializeTestimonialCarousel();
     enhancedTypingEffect();
     createParticles();
+    createTechBackground();
+    createStarfield();
     enhanceContactForm();
 
     // Initialize enhanced skills features
@@ -1088,6 +1126,6 @@ function initializeEnhancedSkills() {
 // Console styling
 console.log('%c🚀 Enhanced Portfolio with Advanced Skills Section Loaded! ', 'background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 10px; border-radius: 5px; font-weight: bold;');
 console.log('%cDeveloped by Sudhanshu Shekhar', 'color: #3498db; font-weight: bold; font-size: 14px;');
-console.log('%cAmritsar Group of Colleges Student', 'color: #9b59b6; font-weight: bold;');
+console.log('%cAmritsar Group of Colleges Graduate', 'color: #9b59b6; font-weight: bold;');
 console.log('%cPassionate about AI, ML, Data Science, and Innovative Solutions! 💻', 'color: #27ae60; font-weight: bold;');
 console.log('%cNew Features: Skill Search, Interactive Charts, Advanced Filters, Tooltips', 'color: #e67e22; font-style: italic;');

@@ -778,9 +778,17 @@ document.addEventListener('DOMContentLoaded', () => {
 initializeProjectFilters();
     initializeTestimonialCarousel();
     enhancedTypingEffect();
-    createParticles();
-    createTechBackground();
-    createStarfield();
+
+    // Only add fixed-position background effects on larger screens to avoid
+    // horizontal overflow on mobile devices (tech icons / particles / starfield
+    // are position:fixed and can extend beyond the viewport).
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) {
+        createParticles();
+        createTechBackground();
+        createStarfield();
+    }
+
     enhanceContactForm();
 
     // Initialize enhanced skills features
@@ -1076,10 +1084,17 @@ function showSkillTooltip(name, level, experience, percentage, element) {
         font-family: 'Poppins', sans-serif;
     `;
 
-    // Position tooltip
+// Position tooltip, keeping it fully inside the viewport (no overflow)
     const rect = element.getBoundingClientRect();
-    tooltip.style.top = (rect.top - 10) + 'px';
-    tooltip.style.left = (rect.right + 10) + 'px';
+    const tooltipWidth = 260;
+    const viewportWidth = window.innerWidth;
+    let left = rect.right + 10;
+    if (left + tooltipWidth > viewportWidth) {
+        left = Math.max(10, viewportWidth - tooltipWidth - 10);
+    }
+    tooltip.style.top = Math.max(10, rect.top - 10) + 'px';
+    tooltip.style.left = left + 'px';
+    tooltip.style.maxWidth = (viewportWidth - 20) + 'px';
 
     // Add to page
     document.body.appendChild(tooltip);

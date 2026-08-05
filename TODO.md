@@ -1,22 +1,13 @@
 # Task Implementation Steps
 
-## index.html
-- [x] Change profile image: photo.jpg → profile_img.jpeg
-- [x] Change LibSoar cover: library.png → libsoar.png
-- [x] Change GlowDew cover image → glowdew.png
-- [x] Rename "Android Development" → "Android/iOS Development"
-- [x] Timeline Mobile App Dev: remove Java, keep Flutter & Dart only
-- [x] Create dedicated Experience section
-- [x] LibSoar status → "Live on Play Store"
-- [x] Add Experience nav link
-- [x] Update meta description/keywords
-
-## script.js
-- [x] Remove "Founder of India Starter" from typing effect
-- [x] Add technical animated background (tech icons + starfield)
-
+## Day Mode Text Color (match Night Mode)
 ## styles.css
-- [x] Add technical portfolio background (AI/ML/app dev themed)
-- [x] Mobile-friendly responsive enhancements
-- [x] Style new Experience section (glassmorphism cards)
+- [x] Light mode text visible on dark space background
+- [x] --text-primary: #0f172a → #f8fafc
+- [x] --text-secondary: #475569 → #cbd5e1
+- [x] --text-muted: #94a3b8 → #64748b
+
+## script.js (mobile overflow prevention)
+- [x] Skip fixed-position background effects (particles / tech icons / starfield) on mobile (<=768px) to prevent horizontal overflow
+- [x] Keep skill tooltip fully inside the viewport (no horizontal overflow)
 </content>
